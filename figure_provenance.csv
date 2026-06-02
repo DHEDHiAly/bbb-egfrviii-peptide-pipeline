@@ -1,0 +1,13 @@
+Figure ID,Source dataset,Control type used,Pipeline stage,Inclusion status
+Fig1_final_consensus_ranking,fig1_consensus_ranking.csv,Primary (P5_Scrambled_ESMFold, n=1),Primary pipeline (pipeline.py),IN manuscript
+Fig2_control_ensemble_distribution,fig2_control_distribution.csv,Ensemble (5 calibration scrambles, n=5),Calibration (calibration.py),IN manuscript
+Fig3_effect_size_heatmap,fig3_zscore_heatmap.csv,Ensemble (5 calibration scrambles, n=5),Final analysis (final_analysis.py),IN manuscript
+Fig4_IPS_model_agreement,fig4_ips_variant_agreement.csv + fig5_rank_stability_primary.csv,"Primary (ranking panels); Ensemble (robustness panel)",Combined (primary + calibration),IN manuscript
+Fig5_rank_stability,"fig5_rank_stability.csv + fig5_rank_stability_primary.csv","Primary (method comparison); Ensemble (threshold stability)",Combined (primary + calibration),IN manuscript
+Fig1_pipeline_overview,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
+Fig2_docking_score_comparison,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
+Fig3_interface_contact_breakdown,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
+Fig4_normalized_contact_density,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
+Fig5_BBB_heuristic_scorecard,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
+Fig6_final_ranking_comparison,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
+Fig7_control_vs_candidate,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)

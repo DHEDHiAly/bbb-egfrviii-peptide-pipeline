@@ -1,0 +1,73 @@
+========================================================================
+BBB-PENETRANT EGFRvIII-TARGETING PEPTIDE PRE-VALIDATION RANKING PIPELINE
+========================================================================
+
+DISCLAIMER:
+  This is a computational prioritization pipeline producing ordinal heuristic
+  ranking scores. It does NOT predict binding affinity, dissociation constants,
+  free energies, experimental BBB permeability, or biological efficacy.
+  All outputs are intended for wet-lab validation candidate prioritization only.
+
+PIPELINE STAGES:
+  1. Target preparation (PDB 8UKX download, chain extraction)
+  2. Peptide library definition (4 constructs + scrambled control)
+  3. 3D structure prediction (ESMFold API with extended backbone fallback)
+  4. Heuristic rigid-body docking (COM alignment + rotational sampling)
+  5. Interface contact analysis (HBonds, hydrophobic, salt bridges)
+  6. Physicochemical characterization (MW, pI, instability, gravy, charge)
+  7. BBB heuristic filtering (charge, MW, hydrophobicity, instability)
+  8. Control comparison (composition-matched scrambled peptide)
+  9. Composite scoring (InterfacePriorityScore)
+  10. Wet-lab candidate ranking
+
+DATE: 2026-06-02 19:46
+TARGET: EGFRvIII (PDB: 8UKX)
+
+PEPTIDE LIBRARY:
+  P1_Linear             TFFYGGSRGKRNNFKTEGWRGGRL
+  P2_Capped             TFFYGGSRGKRNNFKTEGWRGGRL
+  P3_Cyclized           TFFYGGSRGKRNNFKTCVPLPHLKFC
+  P4_RetroEnantio       TFFYGGSRGKRNNFKTEGWRGGRL
+  P5_Scrambled          TGWLFRGNKEFNGSKFRGRRGTYG
+
+SCIENTIFIC NOVELTY:
+  1. Multi-stage reproducible screening workflow
+  2. Evidence-level labeling via normalized contact density
+  3. Composition-matched scrambled peptide negative control
+  4. InterfacePriorityScore: ordinal heuristic for wet-lab prioritization
+  5. BBB-aware heuristic filtering integrated into composite scoring
+  6. Clear separation of in silico screening from experimental validation
+
+SCORING COMPONENTS (InterfacePriorityScore):
+  - ContactScore_norm  (20%): normalized total interface contacts
+  - DensityScore_norm  (20%): normalized contacts per residue
+  - ControlDelta_norm  (20%): improvement over scrambled control
+  - BBB_norm           (20%): BBB heuristic filter score
+  - PhysChem_norm      (20%): physicochemical profile
+
+WET-LAB VALIDATION CANDIDATE:
+  P3_Cyclized (InterfacePriorityScore = 0.828)
+
+FULL RANKING:
+  Rank 1: P3_Cyclized           IPS=0.8280  Contacts=55  Density=2.115  BBB=3
+  Rank 2: P4_RetroEnantio       IPS=0.4076  Contacts=42  Density=1.750  BBB=2
+  Rank 3: P5_Scrambled          IPS=0.4000  Contacts=30  Density=1.250  BBB=3
+  Rank 4: P2_Capped             IPS=0.3050  Contacts=38  Density=1.583  BBB=2
+  Rank 5: P1_Linear             IPS=0.2795  Contacts=37  Density=1.542  BBB=2
+
+INTERPRETATION:
+  The top-ranked peptide (Rank 1) is the recommended first candidate for
+  wet-lab synthesis and experimental validation. The InterfacePriorityScore
+  integrates docking contacts, control comparison, BBB heuristics, and
+  physicochemical properties into a single ordinal prioritization metric.
+  All constructs should be tested in the ranked order.
+
+CAVEATS:
+  1. The scrambled control establishes baseline contact frequency for the
+     given amino acid composition in the binding site geometry.
+  2. P4 (RetroEnantio) uses the same sequence as P1 but with D-amino acids;
+     the heuristic model here does not capture chirality effects.
+  3. P3 (Cyclized) contains a disulfide bridge not modeled in this pipeline.
+  4. These are computational heuristics, not experimental measurements.
+
+========================================================================

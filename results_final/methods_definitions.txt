@@ -1,0 +1,54 @@
+================================================================================
+METHODS DEFINITIONS TABLE — FOR MANUSCRIPT METHODS SECTION
+================================================================================
+
+--- Interface Contact ---
+  Definition: Any receptor–peptide atom pair (CA-only model) within a distance threshold: ≤3.5 A for hydrogen bonds (N/O donor-acceptor), ≤4.5 A for hydrophobic contacts (C-C pair), ≤4.2 A for salt bridges (Lys/Arg–Asp/Glu pair).
+  Limitation: CA-only backbone: side-chain orientations unmodeled. Contact counts are proxies for interface proximity, not evidence of physical bonding.
+  Unit:       count (integer)
+
+--- Normalized Contact Density ---
+  Definition: Total interface contacts (HBonds + Hydrophobic + SaltBridges) divided by peptide sequence length (in residues).
+  Formula:    D = (N_hb + N_hy + N_sb) / L
+  Limitation: Length-normalized proxy for interface engagement efficiency. Does not account for residue-specific interaction propensity.
+  Unit:       contacts per residue
+
+--- InterfacePriorityScore (Original) ---
+  Definition: Weighted composite of 5 normalized (min–max) feature groups: interface contacts (20%), contact density (20%), control delta (20%), BBB heuristic (20%), physicochemical profile (20%).
+  Formula:    IPS_orig = 0.20*mm(contacts) + 0.20*mm(density) + 0.20*mm(control_delta) + 0.20*mm(BBB) + 0.20*mm(-instability)
+  Limitation: Ordinal heuristic only. Weights are arbitrary and not optimized. IPS values have no absolute biological meaning.
+  Unit:       unitless (0–1 scale)
+
+--- InterfacePriorityScore (Balanced) ---
+  Definition: Four equal-weight feature groups: (contacts+density)/2, control delta, BBB, (instability+gravy)/2.
+  Formula:    IPS_bal = 0.25*G1 + 0.25*G2 + 0.25*G3 + 0.25*G4, G1=mm((contacts+density)/2), G2=mm(control_delta), G3=mm(BBB), G4=mm((-instability)+(-gravy)/2)
+  Limitation: Alternative weighting for robustness check. Not validated against experimental data.
+  Unit:       unitless (0–1 scale)
+
+--- InterfacePriorityScore (Interface-Dominant) ---
+  Definition: Prioritizes interface features: contacts (30%), density (30%), control delta (15%), BBB (15%), instability (10%).
+  Formula:    IPS_int = 0.30*mm(contacts) + 0.30*mm(density) + 0.15*mm(control_delta) + 0.15*mm(BBB) + 0.10*mm(-instability)
+  Limitation: Alternative weighting emphasizing structural features. Not validated against experimental data.
+  Unit:       unitless (0–1 scale)
+
+--- BBB Heuristic Score ---
+  Definition: Sum of 4 binary criteria: (1) net charge 2–8 at pH 7.4, (2) molecular weight <4000 Da, (3) gravy index > -1.0, (4) instability index <40. Each criterion scores 1 if met, 0 otherwise.
+  Limitation: Heuristic only. Valid only as ordinal filter. NOT a prediction of blood–brain barrier permeability. Does not account for active transport, efflux, or pharmacokinetics.
+  Unit:       integer (0–4)
+
+--- Scrambled Control ---
+  Definition: Composition-matched permutation of P1_Linear sequence generated via Fisher-Yates shuffle with fixed seed. Preserves amino acid composition but disrupts sequence-specific ordering.
+  Limitation: Single composition only (P1_Linear). Controls for sequence specificity but not composition effects. Multiple independent shuffles used in calibration (n=5).
+  Unit:       N/A
+
+--- Heuristic Docking Score ---
+  Definition: Rigid-body pose score: sum of per-atom penalties/rewards based on minimum distance to any receptor atom. Clash (<2.2 A): +10. Favorable contact (2.2–3.8 A): -1.5. Long-range (3.8–5.0 A): -0.5.
+  Formula:    S = sum_i f(d_i), d_i = min_j ||pep_i - rec_j||, f(d) = 10 if d<2.2, -1.5 if 2.2<=d<3.8, -0.5 if 3.8<=d<5.0
+  Limitation: Scoring function is heuristic, not physics-based. No electrostatics, solvation, or entropy terms. Not equivalent to binding free energy.
+  Unit:       unitless (arbitrary scale)
+
+--- Control Delta ---
+  Definition: Difference between candidate total contacts and mean total contacts of scrambled control ensemble. Positive delta indicates sequence-specific enrichment above composition baseline.
+  Formula:    Delta = candidate.contacts - mean(scrambled.contacts)
+  Limitation: Baseline-dependent. Larger ensemble improves baseline stability. Zero-contacts control baseline inflates delta for all candidates equally.
+  Unit:       count (integer)

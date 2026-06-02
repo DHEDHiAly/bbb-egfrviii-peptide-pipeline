@@ -1,0 +1,53 @@
+
+========================================================================
+CLAIM BOUNDARIES — STRUCTURED SCIENTIFIC LIMITATIONS
+========================================================================
+
+This pipeline produces ORDINAL RANKING SCORES for wet-lab validation
+candidate prioritization. The following claims are explicitly NOT made:
+
+1. BINDING AFFINITY
+   - No dissociation constant (Kd) is claimed or implied.
+   - No binding free energy (ΔG) is claimed or implied.
+   - No IC50 or EC50 value is claimed or implied.
+   - Contact counts are NOT proxies for binding affinity.
+
+2. THERMODYNAMIC QUANTITIES
+   - No enthalpy (ΔH) or entropy (ΔS) contribution is derived.
+   - No van't Hoff analysis is performed.
+   - No Arrhenius or Eyring equation parameters are reported.
+
+3. PHARMACOKINETICS
+   - No blood-brain barrier permeability rate is predicted.
+   - No brain/plasma ratio (Kp) is reported.
+   - No efflux ratio (P-gp substrate status) is predicted.
+   - No metabolic stability or half-life is claimed.
+   - The BBB Heuristic Score is a structural filter, NOT a permeability predictor.
+
+4. STRUCTURAL ACCURACY
+   - Peptide models are CA-only extended backbones or single-structure predictions.
+   - No ensemble sampling, no MD relaxation, no refinement.
+   - Side-chain conformations are not modeled.
+   - Post-translational modifications, disulfide bridges, and capping are not modeled.
+
+5. BIOLOGICAL EFFICACY
+   - No in vitro or in vivo activity is claimed.
+   - No cell uptake, cytotoxicity, or therapeutic effect is measured.
+   - No tumor penetration or targeting selectivity is validated.
+
+6. GENERALIZABILITY
+   - Results are specific to the EGFRvIII binding site (PDB: 8UKX).
+   - The scoring weights are not validated on independent datasets.
+   - The pipeline has not been benchmarked against known actives/inactives.
+
+WHAT THIS PIPELINE DOES PROVIDE:
+   - A reproducible multi-stage computational screening workflow.
+   - An ordinal ranking score (InterfacePriorityScore) for wet-lab prioritization.
+   - A composition-matched scrambled control for baseline comparison.
+   - A sensitivity analysis confirming ranking stability under parameter perturbation.
+   - Evidence-level separation (strong/moderate/weak) based on effect sizes.
+   - Clear identification of the top candidate for wet-lab synthesis and testing.
+
+ALL OUTPUTS REQUIRE EXPERIMENTAL VALIDATION.
+WET-LAB TESTING IS THE SOLE CONFIRMATORY STEP.
+========================================================================

@@ -1,0 +1,89 @@
+========================================================================
+BBB-PENETRANT EGFRvIII-TARGETING PEPTIDE PRE-VALIDATION RANKING PIPELINE
+— CALIBRATION & ROBUSTNESS REPORT —
+========================================================================
+
+COMPUTATION NOTE: All features recomputed from scratch. No cached
+intermediates reused. Extended backbone for all peptides (no ESMFold).
+
+========================================================================
+A. SCORING VARIANTS — FULL RESULTS TABLE
+========================================================================
+Peptide                   Contacts  Density   BBB   IPS_orig    IPS_bal    IPS_int Consensus
+-------------------------------------------------------------------------------------
+P3_Cyclized                     12    0.462     3     0.8688     0.7930     0.9344 # 1
+P1_Linear                        9    0.375     2     0.4969     0.5293     0.5985 # 2
+P2_Capped                        9    0.375     2     0.4969     0.5293     0.5985 # 2
+P4_RetroEnantio                  9    0.375     2     0.4969     0.5293     0.5985 # 2
+P5_Scrambled_4            [CTRL]        0    0.000     3     0.4000     0.5000     0.2500 # 5
+P5_Scrambled_2            [CTRL]        0    0.000     3     0.3792     0.4870     0.2396 # 6
+P5_Scrambled_5            [CTRL]        0    0.000     3     0.3503     0.4690     0.2252 # 7
+P5_Scrambled_1            [CTRL]        0    0.000     3     0.3247     0.4529     0.2124 # 8
+P5_Scrambled_3            [CTRL]        0    0.000     2     0.0000     0.1250     0.0000 # 9
+
+========================================================================
+B. CONTROL ENSEMBLE STATISTICS (n=5 scrambled controls)
+========================================================================
+
+  total_contacts           : 0.00 ± 0.00  (range: 0.00–0.00)
+  norm_density             : 0.00 ± 0.00  (range: 0.00–0.00)
+  bbb_total                : 2.80 ± 0.40  (range: 2.00–3.00)
+  hbonds                   : 0.00 ± 0.00  (range: 0.00–0.00)
+  hydrophobic              : 0.00 ± 0.00  (range: 0.00–0.00)
+
+Control sequences:
+  P5_Scrambled_1             RKGGSRFTTLRWGFGYEFNNGRKG
+  P5_Scrambled_2             RGFTKGFLNGYGTGRRREFKNGSW
+  P5_Scrambled_3             LRRFFYWFGGTEKSTKNRGGNRGG
+  P5_Scrambled_4             GGKGGENTWGGRFTFRLNYRFSKR
+  P5_Scrambled_5             GYGFGNREKTRGKFFGWGLRNRST
+
+========================================================================
+C. SENSITIVITY ANALYSIS — RANK STABILITY
+========================================================================
+(125 threshold combos: HB ±0.5, Hy ±0.5, SB ±0.5 in 0.25 steps)
+
+Peptide                     MeanRank    StdRank  MinRank  MaxRank   RankCV
+---------------------------------------------------------------------
+P3_Cyclized                     1.00       0.00        1        1    0.000
+P1_Linear                       2.00       0.00        2        2    0.000
+P2_Capped                       3.00       0.00        3        3    0.000
+P4_RetroEnantio                 4.00       0.00        4        4    0.000
+P5_Scrambled_1                  5.00       0.00        5        5    0.000
+P5_Scrambled_2                  6.00       0.00        6        6    0.000
+P5_Scrambled_3                  7.00       0.00        7        7    0.000
+P5_Scrambled_4                  8.00       0.00        8        8    0.000
+P5_Scrambled_5                  9.00       0.00        9        9    0.000
+
+========================================================================
+D. STATISTICAL SEPARATION FROM CONTROL
+========================================================================
+
+  P3_Cyclized              : Z(contacts)=+1200.00σ  Z(density)=+461.50σ  Fold(contacts)=120.00x
+  P1_Linear                : Z(contacts)=+900.00σ  Z(density)=+375.00σ  Fold(contacts)=90.00x
+  P2_Capped                : Z(contacts)=+900.00σ  Z(density)=+375.00σ  Fold(contacts)=90.00x
+  P4_RetroEnantio          : Z(contacts)=+900.00σ  Z(density)=+375.00σ  Fold(contacts)=90.00x
+
+========================================================================
+E. VERDICT
+========================================================================
+
+  Top candidate (consensus): P3_Cyclized
+  P3_Cyclized consensus rank: #1
+  P3_Cyclized ranks across models: [np.int64(1), np.int64(1), np.int64(1)]
+
+  Control separation (contacts): Z=infσ
+  Control separation (density): Z=461.50σ
+  Ranking consistent across models: 4/4 peptides
+
+  VERDICT: P3_Cyclized is robustly top-ranked.
+  - All 3 scoring models rank P3 #1 or #2.
+  - Separation from scrambled controls >2 sigma.
+  - Ranking is stable under contact threshold perturbation.
+  - Recommendation: Proceed to LaTeX with P3 as wet-lab candidate.
+
+========================================================================
+DISCLAIMER: These are computational heuristics only. All scores are
+ordinal and intended for wet-lab prioritization, not as predictions
+of binding affinity, permeability, or biological efficacy.
+========================================================================

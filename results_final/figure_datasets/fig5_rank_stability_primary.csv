@@ -1,0 +1,6 @@
+peptide,mean_rank_primary,source
+P3_Cyclized,1,pipeline_esmfold
+P4_RetroEnantio,2,pipeline_esmfold
+P5_Scrambled,5,pipeline_esmfold
+P2_Capped,3,pipeline_esmfold
+P1_Linear,4,pipeline_esmfold

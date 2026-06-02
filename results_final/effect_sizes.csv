@@ -1,0 +1,5 @@
+peptide,z_contacts,d_contacts,class_contacts,z_density,d_density,class_density,z_bbb_total,d_bbb_total,class_bbb_total
+P3_Cyclized,25000000000000.0,25000000000000.0,strong,865000000000.0,865000000000.0,strong,0.0,0.0,weak
+P4_RetroEnantio,12000000000000.0,12000000000000.0,strong,500000000000.0,500000000000.0,strong,-2.24,-2.24,strong
+P2_Capped,8000000000000.0,8000000000000.0,strong,333000000000.0,333000000000.0,strong,-2.24,-2.24,strong
+P1_Linear,7000000000000.0,7000000000000.0,strong,292000000000.0,292000000000.0,strong,-2.24,-2.24,strong

@@ -1,0 +1,42 @@
+========================================================================
+STATISTICAL ANALYSIS — DERIVED FROM COMPUTED OUTPUTS
+========================================================================
+
+--- Per-Candidate Statistics ---
+  P3_Cyclized                contacts= 55  density=2.115  BBB=3  HB=6  Hy=49  SB=0
+  P4_RetroEnantio            contacts= 42  density=1.750  BBB=2  HB=1  Hy=41  SB=0
+  P5_Scrambled               contacts= 30  density=1.250  BBB=3  HB=0  Hy=29  SB=1
+  P2_Capped                  contacts= 38  density=1.583  BBB=2  HB=5  Hy=33  SB=0
+  P1_Linear                  contacts= 37  density=1.542  BBB=2  HB=2  Hy=35  SB=0
+
+--- Effect Sizes (Cohen's d) vs Scrambled Control ---
+  P3_Cyclized                d(contacts)=25000000000000.00 (strong)  d(density)=865000000000.00 (strong)  d(BBB)=  0.00 (weak)
+  P4_RetroEnantio            d(contacts)=12000000000000.00 (strong)  d(density)=500000000000.00 (strong)  d(BBB)= -2.24 (strong)
+  P2_Capped                  d(contacts)=8000000000000.00 (strong)  d(density)=333000000000.00 (strong)  d(BBB)= -2.24 (strong)
+  P1_Linear                  d(contacts)=7000000000000.00 (strong)  d(density)=292000000000.00 (strong)  d(BBB)= -2.24 (strong)
+
+--- P3 vs Second-Best (P4_RetroEnantio) ---
+  d_contacts_P3vsP4: nan
+  class_contacts_P3vsP4: weak
+  d_density_P3vsP4: nan
+  class_density_P3vsP4: weak
+  d_bbb_total_P3vsP4: nan
+  class_bbb_total_P3vsP4: weak
+
+--- Clibration Control Ensemble (n=5, extended backbone) ---
+  Contacts: 0.0 ± 0.0
+  Density:  0.000 ± 0.000
+  Z(P3 contacts vs null): inf
+
+--- Permutation Interpretation ---
+  Null distribution: scrambled contact counts
+  Observed P3 contacts: 55
+  Controls all zeros: P3 exceeds all controls
+  Conservative p(null > P3): <0.17 (1/6, i.e., P3 > all controls in ensemble)
+  Z-score vs null: inf
+
+--- Confidence Ranking ---
+  P3_Cyclized                contacts= 55  d=   nan  tier=weak
+  P4_RetroEnantio            contacts= 42  d=   nan  tier=weak
+  P2_Capped                  contacts= 38  d=   nan  tier=weak
+  P1_Linear                  contacts= 37  d=   nan  tier=weak

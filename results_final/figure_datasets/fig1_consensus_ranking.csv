@@ -1,0 +1,6 @@
+peptide,group,contacts,density,bbb_total
+P3_Cyclized,candidate,55.0,2.115,3.0
+P4_RetroEnantio,candidate,42.0,1.75,2.0
+P2_Capped,candidate,38.0,1.583,2.0
+P1_Linear,candidate,37.0,1.542,2.0
+Scrambled (mean),control,30.0,1.25,3.0

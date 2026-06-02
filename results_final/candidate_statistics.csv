@@ -1,0 +1,6 @@
+peptide,group,contacts,density,hbonds,hydrophobic,salt_bridges,bbb_total,mw,pI,instability,gravy,charge
+P3_Cyclized,candidate,55,2.115,6,49,0,3,3018.52,10.06,43.63,-0.415,5.1
+P4_RetroEnantio,candidate,42,1.75,1,41,0,2,2792.08,11.57,51.83,-1.287,5.0
+P5_Scrambled,control,30,1.25,0,29,1,3,2792.08,11.57,22.58,-1.287,5.0
+P2_Capped,candidate,38,1.583,5,33,0,2,2792.08,11.57,51.83,-1.287,5.0
+P1_Linear,candidate,37,1.542,2,35,0,2,2792.08,11.57,51.83,-1.287,5.0
