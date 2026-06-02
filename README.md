@@ -53,6 +53,10 @@ Only final calibrated figures are used in manuscript:
 | Fig3_effect_size_heatmap | Capped Z-score grid with class labels (strong/moderate/weak) |
 | Fig4_IPS_model_agreement | 2x2 panels — 3 IPS variants, rank consistency table, primary rank, calibration sensitivity |
 | Fig5_rank_stability | Two-panel — 125-threshold perturbation stability, primary vs calibration rank comparison |
+| Fig6_docking_pose | 3D: receptor Cα trace + P3_Cyclized docked with contact residues highlighted |
+| Fig7_BBB_radar | Radar plot — 4 BBB heuristic criteria per peptide (charge, MW, GRAVY, instability) |
+| Fig8_peptide_overlay | 3D overlay of predicted Cα traces for all 4 candidate peptides |
+| Fig9_contact_breakdown | Stacked bar: HBonds vs hydrophobic vs salt bridges per peptide + proportion panel |
 
 All other figures (7 from pipeline.py, 4 from calibration.py) are archived in `archive_full_analysis/` and not referenced in manuscript.
 

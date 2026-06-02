@@ -11,3 +11,7 @@ Fig4_normalized_contact_density,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVE
 Fig5_BBB_heuristic_scorecard,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
 Fig6_final_ranking_comparison,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
 Fig7_control_vs_candidate,Legacy pipeline (pipeline.py),N/A,Legacy,ARCHIVED (not for manuscript)
+Fig6_docking_pose,P3_Cyclized_complex.pdb,N/A (structural visualization),Extended figures (generate_extended_figures.py),IN manuscript
+Fig7_BBB_radar,candidate_statistics.csv,Primary control included,Extended figures (generate_extended_figures.py),IN manuscript
+Fig8_peptide_overlay,P1_Linear.pdb–P4_RetroEnantio.pdb,N/A (structural overlay),Extended figures (generate_extended_figures.py),IN manuscript
+Fig9_contact_breakdown,candidate_statistics.csv,Primary control included,Extended figures (generate_extended_figures.py),IN manuscript
